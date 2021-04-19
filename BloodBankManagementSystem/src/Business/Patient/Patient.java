@@ -6,7 +6,7 @@
 package Business.Patient;
 
 import Business.CollectionPoint.BloodRequirement;
-import Business.DonationRequest.DonationRequest;
+import Business.ReceiveRequest.ReceiveRequest;
 import java.util.ArrayList;
 
 public class Patient {
@@ -14,16 +14,14 @@ public class Patient {
     int id=101;
     private String Patientname;
      private String UserName;
-      private ArrayList<DonationRequest> orderList;
-     public void addOrder(String collectionPointName, String customerName, String deliverMan, ArrayList<BloodRequirement> Order, String cost, String deliveryAddress) {
-        DonationRequest order=new DonationRequest();
+      private ArrayList<ReceiveRequest> orderList;
+     public void addOrder( String customerName, ArrayList<BloodRequirement> Order,String requestPointName, String Address) {
+        ReceiveRequest order=new ReceiveRequest();
         order.setOrder_id(String.valueOf(id));
-        order.setDonorName(customerName);
-        order.setCollectionPointName(collectionPointName);
-        order.setDeliverMan(deliverMan);
+        order.setPatientName(Patientname);
+        order.setRequestpPointName(requestPointName);
         order.setOrder(Order);
-        order.setCost(cost);
-        order.setDeliveryAddress(deliveryAddress);
+        order.setAddress(Address);
         order.setStatus("New Order");
         orderList.add(order);
         id++;
@@ -42,7 +40,7 @@ public class Patient {
 
     public Patient(String UserName){
         this.UserName=UserName;
-        orderList=new ArrayList<DonationRequest>();
+        orderList=new ArrayList<ReceiveRequest>();
     }
     
     public String getName() {
@@ -53,11 +51,11 @@ public class Patient {
         this.Patientname = Name;
     }
 
-    public ArrayList<DonationRequest> getOrderList() {
+    public ArrayList<ReceiveRequest> getOrderList() {
         return orderList;
     }
 
-    public void setOrderList(ArrayList<DonationRequest> order) {
+    public void setOrderList(ArrayList<ReceiveRequest> order) {
         this.orderList = order;
     }
 

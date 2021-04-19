@@ -5,7 +5,6 @@
  */
 package Business.ReceiveRequest;
 
-import Business.DonationRequest.*;
 import Business.CollectionPoint.BloodRequirement;
 import java.util.ArrayList;
 
@@ -16,12 +15,10 @@ import java.util.ArrayList;
 public class ReceiveRequest {
     
     private String order_id;
-    private String deliveryAddress;
-    private String collectionPointName;
-    private String donorName;
-    private String deliverMan;
+    private String Address;
+    private String requestpPointName;
+    private String patientName;
     private ArrayList<BloodRequirement> Order;
-    private String cost;
     private String status;
     
 
@@ -42,28 +39,20 @@ public class ReceiveRequest {
     }
 
 
-    public String getCollectionPointName() {
-        return collectionPointName;
+    public String getRequestpPointName() {
+        return requestpPointName;
     }
 
-    public void setCollectionPointName(String collectionPointName) {
-        this.collectionPointName = collectionPointName;
+    public void setRequestpPointName(String requestpPointName) {
+        this.requestpPointName = requestpPointName;
     }
 
-    public String getDonorName() {
-        return donorName;
+    public String getPatientName() {
+        return patientName;
     }
 
-    public void setDonorName(String donorName) {
-        this.donorName = donorName;
-    }
-
-    public String getDeliverMan() {
-        return deliverMan;
-    }
-
-    public void setDeliverMan(String deliverMan) {
-        this.deliverMan = deliverMan;
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
     }
 
     public ArrayList<BloodRequirement> getOrder() {
@@ -74,20 +63,12 @@ public class ReceiveRequest {
         this.Order = Order;
     }
 
-    public String getCost() {
-        return cost;
+    public String getAddress() {
+        return Address;
     }
 
-    public void setCost(String cost) {
-        this.cost = cost;
-    }
-
-    public String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
+    public void setAddress(String deliveryAddress) {
+        this.Address = Address;
     }
     @Override
     public String toString() {
