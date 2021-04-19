@@ -5,7 +5,8 @@
  */
 package Business.Patient;
 
-import Business.CollectionPoint.BloodRequirement;
+//import Business.CollectionPoint.BloodRequirement;
+import Business.Hospital.HBloodRequirement;
 import Business.ReceiveRequest.ReceiveRequest;
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ public class Patient {
     private String Patientname;
      private String UserName;
       private ArrayList<ReceiveRequest> orderList;
-     public void addOrder( String customerName, ArrayList<BloodRequirement> Order,String requestPointName, String Address) {
+     public void addOrder( String customerName, ArrayList<HBloodRequirement> Order,String requestPointName, String Address) {
         ReceiveRequest order=new ReceiveRequest();
         order.setOrder_id(String.valueOf(id));
         order.setPatientName(Patientname);

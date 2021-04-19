@@ -6,6 +6,7 @@
 package Business.ReceiveRequest;
 
 import Business.CollectionPoint.BloodRequirement;
+import Business.Hospital.HBloodRequirement;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +19,7 @@ public class ReceiveRequest {
     private String Address;
     private String requestpPointName;
     private String patientName;
-    private ArrayList<BloodRequirement> Order;
+    private ArrayList<HBloodRequirement> Order;
     private String status;
     
 
@@ -55,11 +56,11 @@ public class ReceiveRequest {
         this.patientName = patientName;
     }
 
-    public ArrayList<BloodRequirement> getOrder() {
+    public ArrayList<HBloodRequirement> getOrder() {
         return Order;
     }
 
-    public void setOrder(ArrayList<BloodRequirement> Order) {
+    public void setOrder(ArrayList<HBloodRequirement> Order) {
         this.Order = Order;
     }
 

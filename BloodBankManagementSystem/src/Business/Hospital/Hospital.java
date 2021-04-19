@@ -30,15 +30,13 @@ public class Hospital {
 
   
     
-     public void addOrder(String hospitalName, String customerName, String deliverMan, ArrayList<HBloodRequirement> Order, String cost, String deliveryAddress) {
+     public void addOrder(String order_id, String Address, String requestpPointName, ArrayList<HBloodRequirement> Order, String patientName, String status) {
         ReceiveRequest order=new ReceiveRequest();
         order.setOrder_id(String.valueOf(id));
-        order.setDonorName(customerName);
-        order.setCollectionPointName(hospitalName);
-        order.setDeliverMan(deliverMan);
-        order.setOrder(Order);
-        order.setCost(cost);
-        order.setDeliveryAddress(deliveryAddress);
+        order.setPatientName(patientName);
+        order.setRequestpPointName(requestpPointName);
+        order.setOrder(Order); //Hblood requirement
+        order.setAddress(Address);
         order.setStatus("New Request");
         receiveRequestList.add(order);
         id++;
@@ -78,7 +76,23 @@ public class Hospital {
         Menu=new ArrayList<HBloodRequirement>();
         receiveRequestList=new ArrayList<ReceiveRequest>();
     }
-    
+
+    public ArrayList<ReceiveRequest> getReceiveRequestList() {
+        return receiveRequestList;
+    }
+
+    public void setReceiveRequestList(ArrayList<ReceiveRequest> receiveRequestList) {
+        this.receiveRequestList = receiveRequestList;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
   
     private String name;
     private String address;
