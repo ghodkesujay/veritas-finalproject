@@ -20,6 +20,7 @@ public abstract class Role {
         RestaurantAdmin("RestaurantAdmin"),
         Customer("Customer"),
         DeliveryMan("Delivery"),
+        Patient("Patient"),
         SysAdmin("Sysadmin");
         
         private String value;

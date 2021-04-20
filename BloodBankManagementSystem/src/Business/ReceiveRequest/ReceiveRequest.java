@@ -17,7 +17,7 @@ public class ReceiveRequest {
     
     private String order_id;
     private String Address;
-    private String requestpPointName;
+    private String hospitalName;
     private String patientName;
     private ArrayList<HBloodRequirement> Order;
     private String status;
@@ -40,12 +40,12 @@ public class ReceiveRequest {
     }
 
 
-    public String getRequestpPointName() {
-        return requestpPointName;
+    public String getHospitalName() {
+        return hospitalName;
     }
 
-    public void setRequestpPointName(String requestpPointName) {
-        this.requestpPointName = requestpPointName;
+    public void setHospitalName(String hospitalName) {
+        this.hospitalName = hospitalName;
     }
 
     public String getPatientName() {

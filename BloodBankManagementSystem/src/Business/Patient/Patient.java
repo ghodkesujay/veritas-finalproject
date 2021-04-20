@@ -20,7 +20,7 @@ public class Patient {
         ReceiveRequest order=new ReceiveRequest();
         order.setOrder_id(String.valueOf(id));
         order.setPatientName(Patientname);
-        order.setRequestpPointName(requestPointName);
+        order.setHospitalName(requestPointName);
         order.setOrder(Order);
         order.setAddress(Address);
         order.setStatus("New Order");

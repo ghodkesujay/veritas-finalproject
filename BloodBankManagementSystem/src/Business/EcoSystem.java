@@ -9,6 +9,8 @@ package Business;
 import Business.Donor.DonorDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
 import Business.CollectionPoint.CollectionPointDirectory;
+import Business.Hospital.HospitalDirectory;
+import Business.Patient.PatientDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import java.util.ArrayList;
@@ -21,8 +23,10 @@ public class EcoSystem extends Organization{
     
     private static EcoSystem business;
     private CollectionPointDirectory restaurantDirectory;
+    private HospitalDirectory hospitalDirectory;
     private DonorDirectory customerDirectory;
     private DeliveryManDirectory deliveryManDirectory;
+    private PatientDirectory patientDirectory;
 
     //Customer Directory methods to get and set values
     public DonorDirectory getCustomerDirectory() {
@@ -49,6 +53,32 @@ public class EcoSystem extends Organization{
     public void setRestaurantDirectory(CollectionPointDirectory restaurantDirectory) {
         this.restaurantDirectory = restaurantDirectory;
     }
+    
+    //Patient Restaurant Directory methods to get and set values
+    public HospitalDirectory getHospitalDirectory() {
+        if(hospitalDirectory == null)
+        {
+            hospitalDirectory = new HospitalDirectory();
+        }
+        return hospitalDirectory;
+    }
+
+    public void setHospitalDirectory(HospitalDirectory restaurantDirectory) {
+        this.hospitalDirectory = hospitalDirectory;
+    }
+    
+    public PatientDirectory getPatientDirectory() {
+        if(patientDirectory == null)
+        {
+            patientDirectory = new PatientDirectory();
+        }
+        return patientDirectory;
+    }
+
+    public void setPatientDirectory(PatientDirectory restaurantDirectory) {
+        this.patientDirectory = patientDirectory;
+    }
+    
     
     //Delivery Man methods to get and set values
     public DeliveryManDirectory getDeliveryManDirectory() {
