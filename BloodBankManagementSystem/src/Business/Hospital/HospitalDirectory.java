@@ -5,7 +5,7 @@
  */
 package Business.Hospital;
 
-//import Business.Hospital.*;
+import Business.Hospital.*;
 import java.util.ArrayList;
 
 /**
@@ -23,12 +23,12 @@ public class HospitalDirectory {
         this.hospitalList=new ArrayList<Hospital>();
     }
 
-    public ArrayList<Hospital> getRestaurantList() {
+    public ArrayList<Hospital> getHospitalList() {
         return hospitalList;
     }
 
-    public void setRestaurantList(ArrayList<Hospital> restaurantList) {
-        this.hospitalList = restaurantList;
+    public void setHospitalList(ArrayList<Hospital> hospitalList) {
+        this.hospitalList = hospitalList;
     }
     
     public Hospital createRestaurantInfo(String uName){
