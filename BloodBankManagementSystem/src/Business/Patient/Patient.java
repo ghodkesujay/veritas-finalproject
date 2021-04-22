@@ -25,7 +25,7 @@ public class Patient {
         order.setHospitalName(requestPointName);
         order.setOrder(Order);
         order.setAddress(Address);
-        order.setStatus("New Order");
+        order.setStatus("New Request");
         orderList.add(order);
         id++;
     }

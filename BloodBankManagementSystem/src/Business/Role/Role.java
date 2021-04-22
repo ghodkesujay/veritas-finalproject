@@ -21,6 +21,7 @@ public abstract class Role {
         Customer("Customer"),
         DeliveryMan("Delivery"),
         Patient("Patient"),
+        Hospital("Hospital"),
         SysAdmin("Sysadmin");
         
         private String value;
