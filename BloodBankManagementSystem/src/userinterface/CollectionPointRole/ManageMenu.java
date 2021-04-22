@@ -61,8 +61,12 @@ public class ManageMenu extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Additional Information");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 400, -1, -1));
 
@@ -103,6 +107,8 @@ public class ManageMenu extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 830, 100));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Required Blood Group");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, -1, -1));
@@ -114,6 +120,8 @@ public class ManageMenu extends javax.swing.JPanel {
         });
         add(dishNameTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 230, -1));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Requirement in litres");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 450, -1, -1));
 
@@ -148,10 +156,14 @@ public class ManageMenu extends javax.swing.JPanel {
         });
         add(addDishBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 490, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Select any entry from the table and click on below button to delete requirement");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Add new blood requirement");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 300, -1));

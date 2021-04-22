@@ -7,7 +7,7 @@ package Business;
 
 
 import Business.Donor.DonorDirectory;
-import Business.DeliveryMan.DeliveryManDirectory;
+import Business.BloodBank.BloodBankDirectory;
 import Business.CollectionPoint.CollectionPointDirectory;
 import Business.Hospital.HospitalDirectory;
 import Business.Patient.PatientDirectory;
@@ -25,7 +25,7 @@ public class EcoSystem extends Organization{
     private CollectionPointDirectory restaurantDirectory;
     private HospitalDirectory hospitalDirectory;
     private DonorDirectory customerDirectory;
-    private DeliveryManDirectory deliveryManDirectory;
+    private BloodBankDirectory deliveryManDirectory;
     private PatientDirectory patientDirectory;
 
     //Customer Directory methods to get and set values
@@ -81,20 +81,20 @@ public class EcoSystem extends Organization{
     
     
     //Delivery Man methods to get and set values
-    public DeliveryManDirectory getDeliveryManDirectory() {
+    public BloodBankDirectory getDeliveryManDirectory() {
         if(deliveryManDirectory == null)
         {
-            deliveryManDirectory = new DeliveryManDirectory();
+            deliveryManDirectory = new BloodBankDirectory();
         }
         return deliveryManDirectory;
     }
 
-    public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
+    public void setDeliveryManDirectory(BloodBankDirectory deliveryManDirectory) {
         this.deliveryManDirectory = deliveryManDirectory;
     }
     
     
-    public EcoSystem(CollectionPointDirectory restaurantDirectory, DonorDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
+    public EcoSystem(CollectionPointDirectory restaurantDirectory, DonorDirectory customerDirectory, BloodBankDirectory deliveryManDirectory) {
 
         this.restaurantDirectory = restaurantDirectory;
         this.customerDirectory = customerDirectory;

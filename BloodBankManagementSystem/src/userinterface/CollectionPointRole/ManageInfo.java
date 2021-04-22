@@ -72,14 +72,22 @@ public class ManageInfo extends javax.swing.JPanel {
         SaveBtn = new javax.swing.JButton();
         UpdateBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Collection Point name");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 140, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Phone Number");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Address");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 240, -1, -1));
 
@@ -112,7 +120,7 @@ public class ManageInfo extends javax.swing.JPanel {
                 SaveBtnActionPerformed(evt);
             }
         });
-        add(SaveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, -1, -1));
+        add(SaveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, -1, -1));
 
         UpdateBtn.setText("Update");
         UpdateBtn.addActionListener(new java.awt.event.ActionListener() {

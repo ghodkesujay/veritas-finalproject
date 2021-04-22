@@ -6,7 +6,7 @@
 package userinterface.CollectionPointRole;
 
 import Business.Donor.Donor;
-import Business.DeliveryMan.DeliveryMan;
+import Business.BloodBank.BloodBank;
 import Business.EcoSystem;
 import Business.DonationRequest.DonationRequest;
 import static Business.Organization.Type.DeliveryMan;
@@ -45,7 +45,7 @@ public class NotifyBloodBank extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for(DeliveryMan deliveryMan1:system.getDeliveryManDirectory().getDeliveryManList()){
+        for(BloodBank deliveryMan1:system.getDeliveryManDirectory().getDeliveryManList()){
                Object[] row = new Object[1];
                
                 row[0] = deliveryMan1;
@@ -86,6 +86,8 @@ public class NotifyBloodBank extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         DeliveryManJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -134,10 +136,14 @@ public class NotifyBloodBank extends javax.swing.JPanel {
         });
         add(BackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Choose a Blood Bank from below list");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 280, -1));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("This will notify selected Blood Bank that the blood is collected ");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
@@ -150,7 +156,7 @@ public class NotifyBloodBank extends javax.swing.JPanel {
         else
         {
             
-            DeliveryMan deliveryMan  = (DeliveryMan)DeliveryManJTable.getValueAt(selectedRow, 0);   
+            BloodBank deliveryMan  = (BloodBank)DeliveryManJTable.getValueAt(selectedRow, 0);   
             deliveryMan.getOrderList().add(order);
             order.setStatus("Notified to Blood Bank.");
             

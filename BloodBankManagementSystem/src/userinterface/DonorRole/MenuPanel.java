@@ -98,6 +98,8 @@ public class MenuPanel extends javax.swing.JPanel {
         enterpriseLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cardBtn.setText("I can donate for this request");
@@ -106,7 +108,7 @@ public class MenuPanel extends javax.swing.JPanel {
                 cardBtnActionPerformed(evt);
             }
         });
-        add(cardBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 250, -1, -1));
+        add(cardBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         backJButton.setText("<<Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -114,16 +116,20 @@ public class MenuPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 550, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
 
+        valueLabel.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 270, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 270, -1));
 
+        enterpriseLabel.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Address:");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 120, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 120, 30));
 
         cartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -153,7 +159,7 @@ public class MenuPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(cartTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 310, 560, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, 560, 110));
 
         menuTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -183,7 +189,7 @@ public class MenuPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(menuTable);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 560, 120));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 560, 120));
 
         orderBtn1.setText("Confirm");
         orderBtn1.addActionListener(new java.awt.event.ActionListener() {
@@ -191,7 +197,7 @@ public class MenuPanel extends javax.swing.JPanel {
                 orderBtn1ActionPerformed(evt);
             }
         });
-        add(orderBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 550, -1, -1));
+        add(orderBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 490, -1, -1));
 
         RemoveBtn.setText("Remove request");
         RemoveBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -199,21 +205,25 @@ public class MenuPanel extends javax.swing.JPanel {
                 RemoveBtnActionPerformed(evt);
             }
         });
-        add(RemoveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, -1, -1));
-        add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 350, -1));
+        add(RemoveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, -1, -1));
+        add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 350, -1));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel1.setText("Collection Point");
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 60, 320, 30));
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 320, 30));
 
+        enterpriseLabel2.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel2.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel2.setText("Displaying blood requirements of");
-        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 370, 30));
+        add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 30));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("The entered address should be more than 5 characters");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 510, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 520, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cardBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardBtnActionPerformed
@@ -221,7 +231,7 @@ public class MenuPanel extends javax.swing.JPanel {
         
         int selectedRow = menuTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table to donate for the request","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             BloodRequirement item=(BloodRequirement)menuTable.getValueAt(selectedRow, 0);
@@ -298,7 +308,7 @@ public class MenuPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
          int selectedRow = cartTable.getSelectedRow();
         if(selectedRow<0){
-            JOptionPane.showMessageDialog(null,"Please select a row from the table to view details","Warning",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Please select a row from the table to remove request","Warning",JOptionPane.WARNING_MESSAGE);
         }
         else{
             BloodRequirement item=(BloodRequirement)cartTable.getValueAt(selectedRow, 0);

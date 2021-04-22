@@ -4,9 +4,10 @@
  */
 package userinterface.BloodBankRole;
 
-import Business.DeliveryMan.DeliveryMan;
+import Business.BloodBank.BloodBank;
 import Business.EcoSystem;
 import Business.DonationRequest.DonationRequest;
+import Business.ReceiveRequest.ReceiveRequest;
 
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.LabTestWorkRequest;
@@ -48,7 +49,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         
         model.setRowCount(0);
         
-        for(DeliveryMan deliveryMan : business.getDeliveryManDirectory().getDeliveryManList()){
+        for(BloodBank deliveryMan : business.getDeliveryManDirectory().getDeliveryManList()){
             if(deliveryMan.getUserName().equals(userAccount.getUsername())){
                     
                 for(DonationRequest order : deliveryMan.getOrderList()){
@@ -82,9 +83,17 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         workRequestJTable = new javax.swing.JTable();
         processJButton = new javax.swing.JButton();
         refreshJButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        workRequestJTable2 = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(178, 141, 117));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
         workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -113,8 +122,11 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(workRequestJTable);
+        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
+            workRequestJTable.getColumnModel().getColumn(4).setHeaderValue("Quantity in litres");
+        }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 58, 770, 220));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 780, 110));
 
         processJButton.setText("Mark as Used");
         processJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +134,7 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
                 processJButtonActionPerformed(evt);
             }
         });
-        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 380, -1, -1));
+        add(processJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, -1, -1));
 
         refreshJButton.setText("Refresh");
         refreshJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -130,11 +142,62 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
                 refreshJButtonActionPerformed(evt);
             }
         });
-        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 290, -1, -1));
+        add(refreshJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Please select a request above first then you can mark it as 'Used for Patient' with below button");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 660, -1));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Receiver Information:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Donor Information:");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Please select a request above first then you can mark it as 'Used for Patient' with below button");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 660, -1));
+
+        jButton1.setText("Refresh");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
+
+        jScrollPane3.setForeground(new java.awt.Color(255, 255, 255));
+
+        workRequestJTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Receive Request ID", "Hospital Name", "Patient Name", "Address", "Status"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(workRequestJTable2);
+
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 780, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
@@ -171,11 +234,45 @@ public class BloodBankWorkAreaJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        populateTable2();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton processJButton;
     private javax.swing.JButton refreshJButton;
     private javax.swing.JTable workRequestJTable;
+    private javax.swing.JTable workRequestJTable2;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable2() {
+       DefaultTableModel model = (DefaultTableModel) workRequestJTable2.getModel();
+        
+        model.setRowCount(0);
+        
+        for(BloodBank deliveryMan : business.getDeliveryManDirectory().getDeliveryManList()){
+            if(deliveryMan.getUserName().equals(userAccount.getUsername())){
+                    
+                for(ReceiveRequest order : deliveryMan.getRequestlist()){
+                Object[] row = new Object[5];
+                row[0] = order;
+                row[1] = order.getHospitalName();
+                row[2] = order.getPatientName();
+                row[3] = order.getAddress();
+                row[4] = order.getStatus();
+                 
+                model.addRow(row);
+                    
+                }
+            }
+            
+        }
+    }
 }
