@@ -65,6 +65,8 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
         ConfirmBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -96,8 +98,8 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(networkJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 440, 100));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 270, 180, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 440, 100));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 180, -1));
 
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -105,7 +107,7 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, -1, -1));
 
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -113,24 +115,24 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
-        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 470, -1, -1));
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 430, -1, -1));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 585, -1, -1));
 
         jLabel3.setText("Name");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, -1, -1));
-        add(uNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 310, 180, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+        add(uNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 180, -1));
 
         jLabel4.setText("Password");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
         PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
             }
         });
-        add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, 180, -1));
+        add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 380, 180, -1));
 
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -138,7 +140,7 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
-        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, -1, -1));
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -146,7 +148,7 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
                 deleteBtnActionPerformed(evt);
             }
         });
-        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, -1, -1));
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, -1, -1));
 
         ConfirmBtn.setText("Confirm Update");
         ConfirmBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -154,13 +156,20 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
                 ConfirmBtnActionPerformed(evt);
             }
         });
-        add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, -1, -1));
+        add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
         jLabel5.setText("Username");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, -1, 20));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, 20));
 
         jLabel1.setText("Please select a row above then choose operation from below buttons");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 460, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 460, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("You can manage the Collection Points here:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 20));
+
+        jLabel6.setText("Please enter details:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -419,9 +428,11 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
     private javax.swing.JButton backJButton;
     private javax.swing.JButton deleteBtn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;

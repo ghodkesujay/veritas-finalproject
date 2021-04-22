@@ -5,9 +5,11 @@
  */
 package userinterface.SystemAdminWorkArea;
 
-import Business.Donor.Donor;
 import Business.EcoSystem;
-import Business.Role.CustomerRole;
+import Business.Hospital.Hospital;
+import Business.Role.AdminRole;
+import Business.Role.Role;
+import Business.Role.HospitalRole;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -18,42 +20,25 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author sujayghodke
+ * @author Harsh
  */
-public class ManageDonors extends javax.swing.JPanel {
+public class ManageHospital extends javax.swing.JPanel {
 
     /**
-     * Creates new form ManageDonors
+     * Creates new form ManageCollectionPoints
      */
     private JPanel userProcessContainer;
     private EcoSystem system;
+    
+    
     UserAccount user;
-    public ManageDonors(JPanel userProcessContainer, EcoSystem system) {
+   
+    public ManageHospital(JPanel userProcessContainer, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.system = system;
-         populateNetworkTable();
-         ConfirmBtn.setEnabled(false);
-    }
-     private void populateNetworkTable() {
-        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
-        
-        model.setRowCount(0);
-        
-       //checking each user
-        for (UserAccount user : system.getUserAccountDirectory().getUserAccountList()) {
-           
-            if ("Business.Role.CustomerRole".equals(user.getRole().getClass().getName())) {
-                Object[] row = new Object[3];
-               
-                row[0] = user.getName();
-                row[1] = user.getUsername();
-                row[2] = user.getPassword();
-                
-                model.addRow(row);
-            }
-            
-        }
+        populateNetworkTable();
+        ConfirmBtn.setEnabled(false);
     }
 
     /**
@@ -70,6 +55,7 @@ public class ManageDonors extends javax.swing.JPanel {
         nameJTextField = new javax.swing.JTextField();
         backJButton = new javax.swing.JButton();
         submitJButton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         uNameTextField = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -81,6 +67,8 @@ public class ManageDonors extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -110,12 +98,16 @@ public class ManageDonors extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(networkJTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 440, 100));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 180, -1));
+
         backJButton.setText("<< Back");
         backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backJButtonActionPerformed(evt);
             }
         });
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
 
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -123,16 +115,24 @@ public class ManageDonors extends javax.swing.JPanel {
                 submitJButtonActionPerformed(evt);
             }
         });
+        add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 410, -1, -1));
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 585, -1, -1));
 
         jLabel3.setText("Name");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, -1));
+        add(uNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 320, 180, -1));
 
         jLabel4.setText("Password");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
 
         PasswordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PasswordFieldActionPerformed(evt);
             }
         });
+        add(PasswordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 180, -1));
 
         updateBtn.setText("Update");
         updateBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +140,7 @@ public class ManageDonors extends javax.swing.JPanel {
                 updateBtnActionPerformed(evt);
             }
         });
+        add(updateBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
         deleteBtn.setText("Delete");
         deleteBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -147,6 +148,7 @@ public class ManageDonors extends javax.swing.JPanel {
                 deleteBtnActionPerformed(evt);
             }
         });
+        add(deleteBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, -1));
 
         ConfirmBtn.setText("Confirm Update");
         ConfirmBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -154,101 +156,20 @@ public class ManageDonors extends javax.swing.JPanel {
                 ConfirmBtnActionPerformed(evt);
             }
         });
+        add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, -1, -1));
 
         jLabel5.setText("Username");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, 20));
 
-        jLabel1.setText("Please select a row above then choose operation from below buttons");
+        jLabel1.setText("Please select a row then choose operation from below buttons");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 330, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setText("You can manage the Donors here:");
+        jLabel2.setText("You can manage the Hospitals here:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 20));
 
         jLabel6.setText("Please enter details:");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(75, 75, 75)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(updateBtn)
-                                    .addGap(64, 64, 64)
-                                    .addComponent(ConfirmBtn)
-                                    .addGap(81, 81, 81)
-                                    .addComponent(deleteBtn))
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(28, 28, 28)
-                                                .addComponent(uNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGap(27, 27, 27)
-                                                .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(36, 36, 36)
-                                        .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(119, 119, 119)
-                                    .addComponent(submitJButton))
-                                .addComponent(backJButton))
-                            .addGap(371, 371, 371)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(173, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(updateBtn)
-                    .addComponent(ConfirmBtn)
-                    .addComponent(deleteBtn))
-                .addGap(29, 29, 29)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(uNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addComponent(submitJButton)
-                .addGap(33, 33, 33)
-                .addComponent(backJButton)
-                .addGap(62, 62, 62))
-        );
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 120, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
@@ -266,44 +187,43 @@ public class ManageDonors extends javax.swing.JPanel {
         String name = nameJTextField.getText();
         String uname=uNameTextField.getText();
         String password=PasswordField.getText();
-        
               
         try {
              if(name==null || name.isEmpty()){
-                throw new NullPointerException("The field of Name is Empty.");
+                throw new NullPointerException(" Name field is Empty");
                 
                 
             }else if(name.length()<5 || Pattern.matches("^[A-Za-z]+$", name)==false){
-                throw new Exception("The entered name is not in a valid format.");
+                throw new Exception("Please enter valid  Name");
                 
             }
         } catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "The field of Name is Empty.");
+            JOptionPane.showMessageDialog(null, " Name is Empty");
            
             return;
             
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "The entered name is not of valid format.");
+            JOptionPane.showMessageDialog(null, "  Name is invalid");
        
             return;
         }
         
         try {
              if(uname==null || uname.isEmpty()){
-                throw new NullPointerException("The field of User Name is Empty.");
+                throw new NullPointerException("User Name field is Empty");
                 
                 
             }else if(uname.length()<5){
-                throw new Exception("Please enter User Name in valid format. It cannot be lesser than 5 characters.");
+                throw new Exception("Please enter valid User Name");
                 
             }
         } catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "The field of User Name is Empty.");
+            JOptionPane.showMessageDialog(null, "User Name is Empty");
            
             return;
             
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "The entered User Name is not of valid format.");
+            JOptionPane.showMessageDialog(null, " User Name is invalid");
        
             return;
         }
@@ -311,32 +231,31 @@ public class ManageDonors extends javax.swing.JPanel {
          try {
              
             if(password==null || password.isEmpty()){
-                throw new NullPointerException("The field of Password is Empty.");
+                throw new NullPointerException("Pwd field is Empty");
             }else if(Pattern.matches("^(?=(.*[a-z]){1,})(?=(.*[\\d]){1,})(?=(.*[\\W]){1,})(?!.*\\s).{5,30}$", password)==false){
-                throw new Exception("Invalid password. Minimum 5 characters and at least one number is mandatory.");
+                throw new Exception("Invalid Password");
             }
             
             
         }  catch(NullPointerException e){
-             JOptionPane.showMessageDialog(null, "The field of Password is Empty.");
+             JOptionPane.showMessageDialog(null, "Password is Empty");
             
              
              return;
         }catch (Exception e) {
-             JOptionPane.showMessageDialog(null, "Invalid password. Minimum 5 characters and at least one number is mandatory.");
+             JOptionPane.showMessageDialog(null, "Password is of invalid pattern");
              
              
              return;
         }
-        
-        
+         
+         
         if (system.getUserAccountDirectory().checkIfUsernameIsUnique(uname)==false) {
-            JOptionPane.showMessageDialog(null,"A user with the same User Name already exists.");
+            JOptionPane.showMessageDialog(null,"  User Name already exists ");
         }else{
             
-        
-        UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name,uname,password, null, new CustomerRole());
-        Donor cust= system.getCustomerDirectory().createCustomer(uname);
+        UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name,uname,password, null, new HospitalRole());
+        Hospital restro= system.getHospitalDirectory().createRestaurantInfo(uname);
         populateNetworkTable();
         nameJTextField.setText("");
         uNameTextField.setText("");
@@ -354,19 +273,19 @@ public class ManageDonors extends javax.swing.JPanel {
 
         if(selectRow>=0){
             String username= (String) networkJTable.getValueAt(selectRow, 1);
-            String pwd= (String) networkJTable.getValueAt(selectRow, 2);
-            user=system.getUserAccountDirectory().authenticateUser(username, pwd);
+                String pwd= (String) networkJTable.getValueAt(selectRow, 2);
+                user=system.getUserAccountDirectory().authenticateUser(username, pwd);
 
-            nameJTextField.setText(user.getName()+"");
-            uNameTextField.setText(user.getUsername()+"");
-            PasswordField.setText(user.getPassword()+"");
-            // system.getUserAccountDirectory().deleteUserAccount(user);
+                nameJTextField.setText(user.getName()+"");
+                uNameTextField.setText(user.getUsername()+"");
+                PasswordField.setText(user.getPassword()+"");
+               // system.getUserAccountDirectory().deleteUserAccount(user);
+            
 
         }
         else {
-            JOptionPane.showMessageDialog(null,"Please select a row.");
+            JOptionPane.showMessageDialog(null,"Please select a row");
         }
-        
         submitJButton.setEnabled(false);
         deleteBtn.setEnabled(false);
         updateBtn.setEnabled(false);
@@ -378,20 +297,20 @@ public class ManageDonors extends javax.swing.JPanel {
         int selectedRow = networkJTable.getSelectedRow();
         if(selectedRow>=0){
             int selectionButton = JOptionPane.YES_NO_OPTION;
-            int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure that you want to delete?","Warning",selectionButton);
+            int selectionResult = JOptionPane.showConfirmDialog(null, "Are you sure to delete??","Warning",selectionButton);
             if(selectionResult == JOptionPane.YES_OPTION){
                 String username= (String) networkJTable.getValueAt(selectedRow, 1);
                 String pwd= (String) networkJTable.getValueAt(selectedRow, 2);
                 UserAccount user=system.getUserAccountDirectory().authenticateUser(username, pwd);
-
                 
+                //UserAccount user = (UserAccount) networkJTable.getValueAt(selectedRow, 0);
                 system.getUserAccountDirectory().deleteUserAccount(user);
-                system.getCustomerDirectory().deleteCustomer(user.getUsername());
+                system.getRestaurantDirectory().deleteRestaurent(user.getUsername());
+                populateNetworkTable();
             }
         }else{
-            JOptionPane.showMessageDialog(null, "Please select a Row first!");
+            JOptionPane.showMessageDialog(null, "Please select a Row!!");
         }
-        populateNetworkTable();
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void ConfirmBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmBtnActionPerformed
@@ -400,43 +319,44 @@ public class ManageDonors extends javax.swing.JPanel {
         String name = nameJTextField.getText();
         String uname=uNameTextField.getText();
         String password=PasswordField.getText();
+        
               
         try {
              if(name==null || name.isEmpty()){
-                throw new NullPointerException("The field of Name is Empty.");
+                throw new NullPointerException(" Name field is Empty");
                 
                 
             }else if(name.length()<5 || Pattern.matches("^[A-Za-z]+$", name)==false){
-                throw new Exception("Please enter the Name of valid format.");
+                throw new Exception("Please enter valid  Name");
                 
             }
         } catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "The field of Name is Empty");
+            JOptionPane.showMessageDialog(null, " Name is Empty");
            
             return;
             
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "The enter value in Name field is invalid.");
+            JOptionPane.showMessageDialog(null, "  Name is invalid");
        
             return;
         }
         
         try {
              if(uname==null || uname.isEmpty()){
-                throw new NullPointerException("The field of User Name is Empty.");
+                throw new NullPointerException("User Name field is Empty");
                 
                 
             }else if(uname.length()<5){
-                throw new Exception("Please enter the User Name of valid format.");
+                throw new Exception("Please enter valid User Name");
                 
             }
         } catch(NullPointerException e){
-            JOptionPane.showMessageDialog(null, "The field of User Name is Empty");
+            JOptionPane.showMessageDialog(null, "User Name is Empty");
            
             return;
             
         }catch (Exception e){
-            JOptionPane.showMessageDialog(null, "The enter value in User Name is of invalid format.");
+            JOptionPane.showMessageDialog(null, " User Name is invalid");
        
             return;
         }
@@ -444,27 +364,29 @@ public class ManageDonors extends javax.swing.JPanel {
          try {
              
             if(password==null || password.isEmpty()){
-                throw new NullPointerException("The field of Password is Empty.");
+                throw new NullPointerException("Pwd field is Empty");
             }else if(Pattern.matches("^(?=(.*[a-z]){1,})(?=(.*[\\d]){1,})(?=(.*[\\W]){1,})(?!.*\\s).{5,30}$", password)==false){
                 throw new Exception("Invalid Password");
             }
             
             
         }  catch(NullPointerException e){
-             JOptionPane.showMessageDialog(null, "The field of Password is Empty.");
+             JOptionPane.showMessageDialog(null, "Password is Empty");
             
              
              return;
         }catch (Exception e) {
-             JOptionPane.showMessageDialog(null, "Invalid password. Minimum 5 characters and at least one number is mandatory.");
+             JOptionPane.showMessageDialog(null, "Password is of invalid pattern");
              
              
              return;
         }
         
         
+        
+        
         if (system.getUserAccountDirectory().checkIfUsernameIsUnique(uname)==false) {
-            JOptionPane.showMessageDialog(null,"A user with the same User Name already exists.");
+            JOptionPane.showMessageDialog(null,"  User Name already exists ");
         }else{
             
         system.getUserAccountDirectory().updateUserAccount(user,name,uname,password);
@@ -473,15 +395,33 @@ public class ManageDonors extends javax.swing.JPanel {
         deleteBtn.setEnabled(true);
         updateBtn.setEnabled(true);
         ConfirmBtn.setEnabled(false);
-        
         nameJTextField.setText("");
         uNameTextField.setText("");
         PasswordField.setText("");
         }
-
+        
     }//GEN-LAST:event_ConfirmBtnActionPerformed
 
-
+    private void populateNetworkTable() {
+        DefaultTableModel model = (DefaultTableModel) networkJTable.getModel();
+        
+        model.setRowCount(0);
+        
+       // for()
+        for (UserAccount user : system.getUserAccountDirectory().getUserAccountList()) {
+           
+            if ("Business.Role.HospitalRole".equals(user.getRole().getClass().getName())) {
+                Object[] row = new Object[3];
+               
+                row[0] = user.getName();
+                row[1] = user.getUsername();
+                row[2] = user.getPassword();
+                
+                model.addRow(row);
+            }
+            
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ConfirmBtn;
     private javax.swing.JPasswordField PasswordField;
@@ -493,6 +433,7 @@ public class ManageDonors extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField nameJTextField;
     private javax.swing.JTable networkJTable;

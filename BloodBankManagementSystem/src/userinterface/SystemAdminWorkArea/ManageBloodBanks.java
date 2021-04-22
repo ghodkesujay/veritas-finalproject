@@ -62,6 +62,7 @@ public class ManageBloodBanks extends javax.swing.JPanel {
         PasswordField = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -163,6 +164,10 @@ public class ManageBloodBanks extends javax.swing.JPanel {
 
         jLabel1.setText("Please select a row above and choose an operation below");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 170, 460, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("You can manage the Blood Bank here:");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
@@ -428,6 +433,7 @@ public class ManageBloodBanks extends javax.swing.JPanel {
     private javax.swing.JButton deleteBtn;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
