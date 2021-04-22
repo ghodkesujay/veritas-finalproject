@@ -69,6 +69,8 @@ public class OrderDetails extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         statusBtn = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -109,6 +111,8 @@ public class OrderDetails extends javax.swing.JPanel {
         });
         add(BackBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Reception Request ID:");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 170, -1));
 

@@ -68,6 +68,8 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         networkJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,10 +122,14 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 585, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Name");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
         add(uNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, 180, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, -1, -1));
 
@@ -158,16 +164,24 @@ public class ManageCollectionPoints extends javax.swing.JPanel {
         });
         add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Username");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, 20));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please select a row above then choose operation from below buttons");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 460, -1));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("You can manage the Collection Points here:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 20));
 
+        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Please enter details:");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 120, 20));
     }// </editor-fold>//GEN-END:initComponents

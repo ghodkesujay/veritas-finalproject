@@ -6,7 +6,7 @@
 package userinterface.SystemAdminWorkArea;
 
 import Business.Donor.Donor;
-import Business.DeliveryMan.DeliveryMan;
+import Business.BloodBank.BloodBank;
 import Business.EcoSystem;
 import Business.Role.CustomerRole;
 import Business.Role.DeliverManRole;
@@ -64,6 +64,8 @@ public class ManageBloodBanks extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         updateBtn.setText("Update");
@@ -120,6 +122,8 @@ public class ManageBloodBanks extends javax.swing.JPanel {
         });
         add(ConfirmBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, -1, -1));
 
+        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Username");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, 20));
         add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 190, -1));
@@ -140,10 +144,14 @@ public class ManageBloodBanks extends javax.swing.JPanel {
         });
         add(submitJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 420, -1, -1));
 
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Name");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
         add(uNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 290, 190, -1));
 
+        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Password");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
 
@@ -162,10 +170,14 @@ public class ManageBloodBanks extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 90, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please select a row above and choose an operation below");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(225, 170, 460, -1));
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("You can manage the Blood Bank here:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 20));
     }// </editor-fold>//GEN-END:initComponents
@@ -408,7 +420,7 @@ public class ManageBloodBanks extends javax.swing.JPanel {
         }else{
             
         UserAccount ua1 =system.getUserAccountDirectory().createUserAccount(name,uname,password, null, new DeliverManRole());
-        DeliveryMan deliveryMan= system.getDeliveryManDirectory().createDeliveryMan(uname);
+        BloodBank deliveryMan= system.getDeliveryManDirectory().createDeliveryMan(uname);
         populateNetworkTable();
         nameJTextField.setText("");
         uNameTextField.setText("");

@@ -86,6 +86,8 @@ public class PatientAreaJPanel extends javax.swing.JPanel {
         pastTbl = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         restaurentTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -139,19 +141,27 @@ public class PatientAreaJPanel extends javax.swing.JPanel {
         });
         add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
 
+        enterpriseLabel.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Patient:");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 127, 30));
 
+        valueLabel.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 260, 26));
 
+        valueLabel1.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        valueLabel1.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel1.setText("Available Hospitals");
         add(valueLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 260, 26));
 
+        valueLabel2.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        valueLabel2.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel2.setText("Your Blood Request History");
         add(valueLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 290, 26));
 
@@ -185,6 +195,8 @@ public class PatientAreaJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 520, 110));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please select a hospital accessible to you then click on below button to proceed");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
     }// </editor-fold>//GEN-END:initComponents

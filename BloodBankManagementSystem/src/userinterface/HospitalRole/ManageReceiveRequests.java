@@ -76,6 +76,8 @@ public class ManageReceiveRequests extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orderTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -130,7 +132,7 @@ public class ManageReceiveRequests extends javax.swing.JPanel {
                 AssignBtn1ActionPerformed(evt);
             }
         });
-        add(AssignBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+        add(AssignBtn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 330, -1, -1));
 
         jButton1.setText("Refresh");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -140,6 +142,8 @@ public class ManageReceiveRequests extends javax.swing.JPanel {
         });
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, -1, -1));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please select a request from table before choosing options");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 460, -1));
     }// </editor-fold>//GEN-END:initComponents

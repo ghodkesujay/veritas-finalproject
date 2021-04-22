@@ -103,6 +103,8 @@ public class PatientMenuPanel extends javax.swing.JPanel {
         enterpriseLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(178, 141, 117));
+        setForeground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cardBtn.setText("I can receive this donation");
@@ -121,12 +123,16 @@ public class PatientMenuPanel extends javax.swing.JPanel {
         });
         add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 610, -1, -1));
 
+        valueLabel.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         valueLabel.setText("<value>");
         add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 270, -1));
 
+        enterpriseLabel.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Address:");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, 120, 30));
 
@@ -207,16 +213,22 @@ public class PatientMenuPanel extends javax.swing.JPanel {
         add(RemoveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, -1, -1));
         add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 350, -1));
 
+        enterpriseLabel1.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel1.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel1.setText("Hospital");
         add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 110, 30));
 
+        enterpriseLabel2.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel2.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        enterpriseLabel2.setText("Displaying blood requirements of");
+        enterpriseLabel2.setText("Displaying blood availability at");
         add(enterpriseLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 370, 30));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("The entered address should be more than 5 characters");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
