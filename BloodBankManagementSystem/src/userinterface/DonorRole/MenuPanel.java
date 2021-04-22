@@ -209,6 +209,7 @@ public class MenuPanel extends javax.swing.JPanel {
         add(addressTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 350, -1));
 
         enterpriseLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel1.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         enterpriseLabel1.setText("Collection Point");
         add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 320, 30));
