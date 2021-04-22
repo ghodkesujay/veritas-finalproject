@@ -5,7 +5,6 @@
  */
 package Business.ReceiveRequest;
 
-import Business.CollectionPoint.BloodRequirement;
 import Business.Hospital.HBloodRequirement;
 import java.util.ArrayList;
 
@@ -21,6 +20,7 @@ public class ReceiveRequest {
     private String patientName;
     private ArrayList<HBloodRequirement> Order;
     private String status;
+    private String deliverMan;
     
 
     public String getOrder_id() {
@@ -74,6 +74,14 @@ public class ReceiveRequest {
     @Override
     public String toString() {
         return order_id;
+    }
+
+     public String getDeliverMan() {
+        return deliverMan;
+    }
+
+    public void setDeliverMan(String deliverMan) {
+        this.deliverMan = deliverMan;
     }
     
 }

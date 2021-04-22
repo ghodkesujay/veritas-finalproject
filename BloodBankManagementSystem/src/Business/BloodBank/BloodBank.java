@@ -7,6 +7,8 @@ package Business.BloodBank;
 
 import Business.DonationRequest.DonationRequest;
 import Business.CollectionPoint.BloodRequirement;
+import Business.Hospital.HBloodRequirement;
+import Business.ReceiveRequest.ReceiveRequest;
 import java.util.ArrayList;
 
 /**
@@ -17,9 +19,16 @@ public class BloodBank {
     private String Name;
     private String UserName;
     private ArrayList<DonationRequest> orderList;
+    private ArrayList<ReceiveRequest> requestlist;
     private String address;
     private String number;
+
+    public BloodBank() {
+        requestlist = new ArrayList<ReceiveRequest>();
+    }
      
+    
+    
     public void addOrder(String collectionPointName, String customerName, String deliverMan, ArrayList<BloodRequirement> Order, String cost, String deliveryAddress) {
 
         DonationRequest order = new DonationRequest();
@@ -31,6 +40,18 @@ public class BloodBank {
         order.setDeliveryAddress(deliveryAddress);
         order.setStatus("New Order");
         orderList.add(order);
+    }
+        
+    public void addRequest(String hospitalName, String customerName, String deliverMan, ArrayList<HBloodRequirement> Order, String deliveryAddress) {
+
+        ReceiveRequest order1 = new ReceiveRequest();
+        order1.setPatientName(customerName);
+        order1.setHospitalName(hospitalName);
+        order1.setDeliverMan(deliverMan);
+        order1.setOrder(Order); 
+        order1.setAddress(deliveryAddress);
+        order1.setStatus("New Request");
+        requestlist.add(order1);
 
     }
 
@@ -46,7 +67,9 @@ public class BloodBank {
 
     public BloodBank(String UserName){
         this.UserName=UserName;
+        requestlist = new ArrayList<ReceiveRequest>();
         orderList=new ArrayList<DonationRequest>();
+        
     }
     
     public String getName() {
@@ -59,6 +82,14 @@ public class BloodBank {
 
     public ArrayList<DonationRequest> getOrderList() {
         return orderList;
+    }
+
+    public ArrayList<ReceiveRequest> getRequestlist() {
+        return requestlist;
+    }
+
+    public void setRequestlist(ArrayList<ReceiveRequest> requestlist) {
+        this.requestlist = requestlist;
     }
 
     public void setOrderList(ArrayList<DonationRequest> order) {
