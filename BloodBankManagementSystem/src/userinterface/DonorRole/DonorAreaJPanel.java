@@ -84,6 +84,7 @@ public class DonorAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         pastTbl = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(178, 141, 117));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -121,7 +122,7 @@ public class DonorAreaJPanel extends javax.swing.JPanel {
             restaurentTable.getColumnModel().getColumn(2).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 520, 130));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 520, 130));
 
         requestTestJButton.setText("Raise Collection Request");
         requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +130,7 @@ public class DonorAreaJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
@@ -137,31 +138,31 @@ public class DonorAreaJPanel extends javax.swing.JPanel {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 520, -1, -1));
 
         enterpriseLabel.setBackground(new java.awt.Color(0, 0, 0));
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setForeground(new java.awt.Color(255, 255, 255));
         enterpriseLabel.setText("Donor:");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 127, 30));
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 127, 30));
 
         valueLabel.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 260, 26));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 260, 26));
 
         valueLabel1.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         valueLabel1.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel1.setText("Available Collection Points");
-        add(valueLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 260, 26));
+        add(valueLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 260, 26));
 
         valueLabel2.setBackground(new java.awt.Color(0, 0, 0));
         valueLabel2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         valueLabel2.setForeground(new java.awt.Color(255, 255, 255));
         valueLabel2.setText("Your Blood Donation History");
-        add(valueLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 290, 26));
+        add(valueLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 290, 26));
 
         pastTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -191,12 +192,15 @@ public class DonorAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(pastTbl);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 520, 110));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 520, 110));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Please select a collection point accessible to you then click on below button to proceed");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/images.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 440, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
@@ -226,6 +230,7 @@ public class DonorAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable pastTbl;
