@@ -30,7 +30,8 @@ public class Hospital {
 
   
     
-     public void addOrder(String order_id, String Address, String hospitalName, ArrayList<HBloodRequirement> Order, String patientName, String status) {
+     //public void addOrder(String order_id, String Address, String hospitalName, ArrayList<HBloodRequirement> Order, String patientName, String status) {
+     public void addOrder(String hospitalName, String patientName, String deliverMan, ArrayList<HBloodRequirement> Order, String cost, String Address) {
         ReceiveRequest order=new ReceiveRequest();
         order.setOrder_id(String.valueOf(id));
         order.setPatientName(patientName);

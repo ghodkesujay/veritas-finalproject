@@ -68,7 +68,8 @@ public class ReceiveRequest {
         return Address;
     }
 
-    public void setAddress(String deliveryAddress) {
+    //public void setAddress(String deliveryAddress) {
+    public void setAddress(String Address) {    
         this.Address = Address;
     }
     @Override

@@ -156,7 +156,7 @@
               <Table columnCount="3" rowCount="4">
                 <Column editable="false" title="Blood Group" type="java.lang.String"/>
                 <Column editable="false" title="Additional Details" type="java.lang.String"/>
-                <Column editable="false" title="Required Amount" type="java.lang.String"/>
+                <Column editable="false" title="Available Amount" type="java.lang.String"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

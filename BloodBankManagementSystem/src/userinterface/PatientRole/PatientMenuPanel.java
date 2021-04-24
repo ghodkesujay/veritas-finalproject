@@ -174,7 +174,7 @@ public class PatientMenuPanel extends javax.swing.JPanel {
                 {null, null, null}
             },
             new String [] {
-                "Blood Group", "Additional Details", "Required Amount"
+                "Blood Group", "Additional Details", "Available Amount"
             }
         ) {
             Class[] types = new Class [] {
